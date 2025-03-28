@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const signupRouter=require('./routes/signupRouter');
+app.use(express.urlencoded({extended: true}));
 //require layout
 const expressLayouts = require('express-ejs-layouts');
 
