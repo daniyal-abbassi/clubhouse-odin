@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
+const signupRouter=require('./routes/signupRouter');
 //require layout
 const expressLayouts = require('express-ejs-layouts');
 
@@ -14,8 +15,8 @@ app.set('layout','./layouts/main');
 //set view engine
 app.set('view engine','ejs');
 
-
-
+//routers here
+app.use('/sign-up',signupRouter)
 
 
 
