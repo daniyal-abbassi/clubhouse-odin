@@ -41,6 +41,14 @@ const User = {
             console.error(`ERROR IN USER.findById model: ${error}`);
             throw error;
         }
+    },
+    upgradeUser: async(user_id)=>{
+        try {
+            await pool.query('UPDATE users SET membership=true WHERE user_id=$1',[user_id]);
+        } catch (error) {
+            console.error(`ERROR IN USER.upgradeUser model: ${error}`);
+            throw error;
+        }
     }
 }
 
