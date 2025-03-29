@@ -11,6 +11,9 @@ const messagesController = {
             console.error('ERROR IN MESSAGES: ',error)
             res.status(500).send('SERVER ERROR!')
         }
+    },
+    addMessageGet: (req,res)=>{
+        res.render('addMessage',{layout: './layouts/main',title: 'Add Message'})
     }
 }
 
