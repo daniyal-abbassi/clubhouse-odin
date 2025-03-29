@@ -3,7 +3,10 @@
 
 const loginController = {
     loginGet: (req,res) => {
-        res.render('loginForm',{layout: './layouts/main',title: 'Log In'})
+        const messages = {
+            error: req.flash('error')
+        }
+        res.render('loginForm',{layout: './layouts/main',title: 'Log In',messages})
     }
 }
 
