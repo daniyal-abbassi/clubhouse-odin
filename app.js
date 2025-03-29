@@ -42,7 +42,14 @@ app.use('/sign-up',signupRouter)
 app.use('/log-in',loginRouter)
 app.use('/messages',messagesRouter)
 app.use('/membership',membershipRouter)
-
+app.get('/log-out',(req,res)=>{
+    req.logout(err=>{
+        if(err) {
+            return next(err)
+        }
+        res.redirect('/messages')
+    })
+})
 
 
 
