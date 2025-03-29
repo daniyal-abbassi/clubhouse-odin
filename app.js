@@ -8,6 +8,7 @@ require('dotenv').config();
 //require routers
 const signupRouter=require('./routes/signupRouter');
 const loginRouter = require('./routes/loginRouter');
+const messagesRouter = require('./routes/messagesRouter');
 
 require('./passport-config');
 app.use(express.urlencoded({extended: true}));
@@ -38,7 +39,7 @@ app.use(passport.session());
 //routers here
 app.use('/sign-up',signupRouter)
 app.use('/log-in',loginRouter)
-
+app.use('/messages',messagesRouter)
 
 
 

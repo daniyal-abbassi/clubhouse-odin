@@ -31,13 +31,13 @@ validate login form
 
 
 implement wirting message configurations
-    create a ejs for messages(main page)
-    create a router for messages
-    create a controller for messages
-    add messages model for adding new messages
-    conditional rendering for who can wirte messages or who should upgrade or who is already upgrade
-    only logged in users can see usernames and time of messages
-    should upgrade membership stasus for writing messages
+    create a ejs for posts(main page)
+    create a router for posts
+    create a controller for posts
+    add posts model for adding new posts
+    conditional rendering for who can wirte posts or who should upgrade or who is already upgrade
+    only logged in users can see usernames and time of posts
+    should upgrade membership stasus for writing posts
     should wirte a code to upgrade
     a upgrade form page
     validata and authenticate that form
