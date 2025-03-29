@@ -35,6 +35,11 @@ implement wirting message configurations
     create a router for posts
     create a controller for posts
     add posts model for adding new posts
+    add a middlware for ensues the user in logged in
+    add that middlware to new message router
+    get user id and text from req(post)
+    add message 
+    redirect
     conditional rendering for who can wirte posts or who should upgrade or who is already upgrade
     only logged in users can see usernames and time of posts
     should upgrade membership stasus for writing posts
