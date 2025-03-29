@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 //require passport
 const passport = require('passport');
-const session = require('express-session')
+const session = require('express-session');
+const flash = require('connect-flash');
 require('dotenv').config();
 //require routers
 const signupRouter=require('./routes/signupRouter');
@@ -30,10 +31,10 @@ app.use(session({
     saveUninitialized: false
 }))
 
+app.use(flash());
 //initialize authentication before routes
 app.use(passport.initialize());
 app.use(passport.session());
-
 //routers here
 app.use('/sign-up',signupRouter)
 app.use('/log-in',loginRouter)
