@@ -11,3 +11,57 @@ body {
 
 /*header.ejs*/
 
+header {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 50px;
+    background-color: #1B9AAA;
+    color: #FFC43D;
+}
+header > h1 {
+    font-weight: lighter;
+  font-size: 3rem;
+}
+nav {
+    display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+nav button {
+    padding: 5px 8px;
+  background-color: #06D6A0;
+  border: none;
+  font-weight: inherit;
+  color: #F8FFE5;
+  font-size: 1.5rem;
+  border-radius: 8px;
+
+}
+nav button:hover {
+    font-weight: bold;
+    background-color: #EF476F;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+nav button a {
+    text-decoration: none;
+  color: #F8FFE5;
+}
+
+/*footer.ejs*/
+footer {
+    display: flex;
+  flex-direction: row;
+  justify-content: center;
+  bottom: 0;
+  position: fixed;
+  background-color: #1B9AAA;
+  color: #FFC43D;
+  width: 100vw;
+  padding: 25px 50px;
+  font-size: 1.4rem;
+}
