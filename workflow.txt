@@ -40,6 +40,7 @@ implement wirting message configurations
     get user id and text from req(post)
     add message 
     redirect
+    add user for that message in messages.ejs
     conditional rendering for who can wirte posts or who should upgrade or who is already upgrade
     only logged in users can see usernames and time of posts
     should upgrade membership stasus for writing posts
