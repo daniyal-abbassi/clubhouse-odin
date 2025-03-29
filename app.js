@@ -36,7 +36,7 @@ app.use(passport.session());
 
 //routers here
 app.use('/sign-up',signupRouter)
-app.use('log-in',loginRouter)
+app.use('/log-in',loginRouter)
 
 
 
