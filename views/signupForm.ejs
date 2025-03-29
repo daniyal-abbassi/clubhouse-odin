@@ -1,3 +1,4 @@
+<%-include('errors.ejs')%>
 <form action="/sign-up" method="POST">
     <label for="fullName">Full Name: </label>
     <input type="text" name="fullName" id="fullName" required placeholder="Full Name" />
@@ -7,6 +8,9 @@
 
     <label for="password">Password: </label>
     <input type="password" name="password" id="password" required placeholder="password" />
+
+    <label for="confirmPassword">Confirm Password: </label>
+    <input type="password" name="confirmPassword" id="confirmPassword" required placeholder="confirmPassword" />
 
     <input type="submit" value="Sign Up">
 </form>
