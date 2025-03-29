@@ -33,7 +33,36 @@ passport.use('local-signup',new LocalStrategy({
     } 
 ))
 
+//use localstrategy form login
+passport.use('local-login',new LocalStrategy({
+    //declare fields
+    usernameField: 'username',
+    passwordField: 'password'
+},
 
+    //declare callback function
+    async(username,password,done) => {
+        try {
+            //see if user logged is in users or not
+            const existingUser = await User.findOne(username);
+            console.log('user successfully logged in: ',existingUser)
+            //if it is not , return with error
+            if(!existingUser) {
+                return done(null,false,{message: 'User not Found!!!'})
+            }
+            //compare passwords to see if it is match(if user exists)
+            const matchedPassword = await bcrypt.compare(password,existingUser.password)
+            //if passwords matched, log the user in
+            if(!matchedPassword) {
+                return done(null,false,{message: 'Password is incorrect!!!'})
+            }
+            //pass userObject to done(for background passport configurations)
+            return done(null,existingUser)
+        } catch (error) {
+            return done(error)
+        }
+    }
+))
 
 //serialization and deserialization
 passport.serializeUser((user,done)=>{

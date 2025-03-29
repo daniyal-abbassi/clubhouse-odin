@@ -35,7 +35,7 @@ const User = {
     //find a user by id
     findById: async(user_id)=>{
         try {
-            const result = await pool.query('SELECT * FROM users WHERE user_id=$1 RETURNING *',[user_id]);
+            const result = await pool.query('SELECT * FROM users WHERE user_id=$1',[user_id]);
             return result.rows[0]
         } catch (error) {
             console.error(`ERROR IN USER.findById model: ${error}`);
