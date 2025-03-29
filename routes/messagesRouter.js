@@ -6,4 +6,5 @@ const ensureLoggedIn = require('../middleware/auth');
 messagesRouter.get('/',messagesController.messagesGet)
 messagesRouter.get('/new-message',ensureLoggedIn,messagesController.addMessageGet)
 
+messagesRouter.post('/new-message',ensureLoggedIn,messagesController.addMessagePost)
 module.exports=messagesRouter;

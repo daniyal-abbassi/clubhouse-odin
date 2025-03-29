@@ -13,7 +13,7 @@ const Messages = {
     },
     createMessage: async(user_id,text)=>{
         try {
-            await pool.query('INSERT INTO messages(user_id,text) VALUES($1,$2)');
+            await pool.query('INSERT INTO messages(user_id,text) VALUES($1,$2)',[user_id,text]);
         } catch (error) {
             console.error('ERROR IN MESSAGES.createMessage: ',error);
             throw error;
