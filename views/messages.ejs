@@ -1,12 +1,25 @@
+<h1>Clubhouse-Odin</h1>
+<hr />
+
 <ul>
     <%if(messages&&messages.length>0) {%>
         <% messages.forEach(message=>{%>
-
-            <li><h3><%=message.text%></h3><small><%=message.created_at%></small></li>
+            <%if(user) {%>
+                <p>Posted by: <%=message.username%></p> at <small><%=message.written_at%></small>
+            <%} else {%>
+                <p>(log in to see username and time)</p>
+            <%}%>
+            <li><h3><%=message.text%></h3></li>
         <%})%>
     <%} else {%>
         <p>No Posts Yet!</p>
     <%}%>
 </ul>
 
-<button><a href="/messages/new-message">New Message</a></button>
+<%if(!user) {%>
+    <button><a href="/sign-up">Sign Up</a></button>
+    <button><a href="/log-in">Log in</a></button>
+<%} else {%>
+    <button><a href="/messages/new-message">New Message</a></button>
+    <button><a href="log-out">Log out</a></button>
+<%}%>

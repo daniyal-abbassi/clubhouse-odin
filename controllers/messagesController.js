@@ -6,7 +6,7 @@ const messagesController = {
             //pass messages for showing in page
             const messages = await Messages.getAllMessages();
             
-            res.render('messages',{layout: './layouts/main',title: 'Messages',messages})
+            res.render('messages',{layout: './layouts/main',title: 'Messages',messages,user: req.user})
             
         } catch (error) {
             console.error('ERROR IN MESSAGES.messagesGet: ',error)
