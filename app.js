@@ -1,7 +1,13 @@
 const express = require('express');
 const app = express();
+//require passport
+const passport = require('passport');
+const session = require('express-session')
 require('dotenv').config();
+//require routers
 const signupRouter=require('./routes/signupRouter');
+
+require('./passport-config');
 app.use(express.urlencoded({extended: true}));
 //require layout
 const expressLayouts = require('express-ejs-layouts');
@@ -15,6 +21,17 @@ app.use(expressLayouts);
 app.set('layout','./layouts/main');
 //set view engine
 app.set('view engine','ejs');
+
+//implement session
+app.use(session({
+    secret: process.env.SECRET || 'my-cute-cat',
+    resave: false,
+    saveUninitialized: false
+}))
+
+//initialize authentication before routes
+app.use(passport.initialize());
+app.use(passport.session());
 
 //routers here
 app.use('/sign-up',signupRouter)
