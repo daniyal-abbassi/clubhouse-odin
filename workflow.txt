@@ -1,0 +1,47 @@
+install layout dependencies
+create layouts for containing htmls
+configrate related settings for layout and stylings(public and main)
+creating a signup form -html and ejs
+create router for signup form
+after finishing the signup form - create models for adding users to database
+after that works, configare passport authentications (for signing up)
+    require passport and session in app.js
+    initialze passport and session in app.js
+    in passport-config.js  
+        require localStrategy and brypt ,passport and User models
+        use localStrategy for sign up authentications
+            declare filds that need to authenticate
+            create callback function with done and check for existing user and then add to database with hash passrod
+check database to see if that user is add or not
+
+ADDITIONAL TINGS FOR SIGN UP:
+
+implement validations for inputs
+implement a confirm password functionality
+style signup form - come up with a general stylying attitude
+
+--sign up part is done for now--
+
+create login router
+create login form ejs
+create login authentications(login if that user is sign up alrady)
+create and modify login router and controller
+validate login form
+
+
+
+implement wirting message configurations
+    create a ejs for messages(main page)
+    create a router for messages
+    create a controller for messages
+    add messages model for adding new messages
+    conditional rendering for who can wirte messages or who should upgrade or who is already upgrade
+    only logged in users can see usernames and time of messages
+    should upgrade membership stasus for writing messages
+    should wirte a code to upgrade
+    a upgrade form page
+    validata and authenticate that form
+
+
+
+
