@@ -1,8 +1,10 @@
-const User = require('../models/User');
 
 const signupController = {
     signupGet: (req,res) => {
-        res.render('signupForm',{title: 'Sign Up',layout: './layouts/main'})
+        const messages = {
+            error: req.flash('error')
+        }
+        res.render('signupForm',{title: 'Sign Up',layout: './layouts/main',messages,user: req.user})
     },
     
 }

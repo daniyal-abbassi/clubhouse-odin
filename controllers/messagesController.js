@@ -18,7 +18,7 @@ const messagesController = {
         if(!req.user.membership) {
             return res.redirect('/messages?message=you need to upgrade to wirte a post')
         }
-        res.render('addMessage',{layout: './layouts/main',title: 'Add Message'})
+        res.render('addMessage',{layout: './layouts/main',title: 'Add Message',user: req.user})
     },
     addMessagePost: async(req,res)=>{
         try {

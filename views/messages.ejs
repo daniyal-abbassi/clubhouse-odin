@@ -1,5 +1,4 @@
-<h1>Clubhouse-Odin</h1>
-<hr />
+
 
 <ul>
     <%if(messages&&messages.length>0) {%>
@@ -16,16 +15,3 @@
     <%}%>
 </ul>
 
-<%if(!user) {%>
-    <button><a href="/sign-up">Sign Up</a></button>
-    <button><a href="/log-in">Log in</a></button>
-<%} else {%>
-    <%if(user.membership) {%>
-        <button><a href="/messages/new-message">New Message</a></button>
-
-    <%} else {%>
-        <p>Become a member to write a new post</p>
-        <button><a href="/membership">Become a member</a></button>
-    <%}%>
-    <button><a href="log-out">Log out</a></button>
-<%}%>
