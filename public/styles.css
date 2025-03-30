@@ -12,7 +12,7 @@ body {
 /*header.ejs*/
 
 header {
-    position: fixed;
+    /* position: fixed; */
     width: 100vw;
     text-align: center;
     display: flex;
@@ -24,9 +24,11 @@ header {
     background-color: #1B9AAA;
     color: #FFC43D;
 }
+
 header > h1 {
     font-weight: lighter;
   font-size: 3rem;
+  cursor: pointer;
 }
 nav {
     display: flex;
@@ -70,7 +72,7 @@ footer {
 
 /*messages.ejs*/
 .posts-container {
-    padding-top: 140px;
+    padding-top: 50px;
     padding-bottom: 100px;
   display: flex;
   flex-direction: row;
@@ -87,17 +89,17 @@ footer {
   display: flex;
   flex-direction: column;
 }
-.post-username {
+.post-username,.post-date {
     width: 50%;
     margin-bottom: 20px;
   background-color: #EF476F;
   padding: 5px 10px;
   border-radius: 10px;
 }
-.username,.no-username {
+.username,.no-username,.no-date {
     display: inline-block;
 }
-.username {
+.username,.date {
     display: inline-block;
     color: #F8FFE5;
     font-weight: 200;
@@ -107,8 +109,57 @@ footer {
     font-style: normal;
 }
 .post-text p {
+    margin-top: 20px;
     height: 50px;
   border: 1px solid #fff;
   padding: 10px 20px;
   border-radius: 10px;
+}
+/*sign-up.ejs*/
+.form {
+    display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  width: 30vw;
+  margin: 0 auto;
+    margin-top: 0px;
+  background-color: #06D6A0;
+  margin-top: 50px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+}
+.form label {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.form input {
+    /* margin-top: 5px; */
+    display: inline-block;
+  font-size: 1.3rem;
+  border: none;
+  background: #EF476F;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #F8FFE5;
+}
+input[type='submit'] {
+    width: 120px;
+  border: 1px solid aliceblue;
+  color: aliceblue;
+  cursor: pointer;
+  margin: 5px auto;
+  margin-top: 20px;
+}
+input::placeholder {
+    color: #FFC43D;
+}
+
+/*newMessage.ejs*/
+textarea {
+    background-color: #ef476f;
+  padding: 5px;
+  color: #FFC43D;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
 }
