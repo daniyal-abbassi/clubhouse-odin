@@ -12,6 +12,8 @@ body {
 /*header.ejs*/
 
 header {
+    position: fixed;
+    width: 100vw;
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -62,6 +64,51 @@ footer {
   background-color: #1B9AAA;
   color: #FFC43D;
   width: 100vw;
-  padding: 25px 50px;
-  font-size: 1.4rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+/*messages.ejs*/
+.posts-container {
+    padding-top: 140px;
+    padding-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 30px 30px;
+  justify-content: center;
+}
+.post {
+    background-color: #06D6A0;
+  padding: 15px 10px;
+  border-radius: 10px;
+ width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.post-username {
+    width: 50%;
+    margin-bottom: 20px;
+  background-color: #EF476F;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.username,.no-username {
+    display: inline-block;
+}
+.username {
+    display: inline-block;
+    color: #F8FFE5;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.153em;
+    font-style: normal;
+}
+.post-text p {
+    height: 50px;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
 }

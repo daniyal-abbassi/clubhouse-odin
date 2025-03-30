@@ -1,17 +1,27 @@
 
-
-<ul>
+<div class="posts-container">
     <%if(messages&&messages.length>0) {%>
         <% messages.forEach(message=>{%>
-            <%if(user) {%>
-                <p>Posted by: <%=message.username%></p> at <small><%=message.written_at%></small>
+            <div class="post">
+                <section class="post-username">
+                    <p class="username">Posted by: </p>
+                <%if(user) {%>
+                    <span><%=message.username%> </span> at <small><%=message.written_at%></small>
+
+                <%} else {%>
+                    <p class="no-username">(log in to see details)</p>
+                </section>
+                <%}%>
+                <section class="post-text">
+                    <p><%=message.text%></p>
+                </section>
+            </div>
+            <%})%>
             <%} else {%>
-                <p>(log in to see username and time)</p>
-            <%}%>
-            <li><h3><%=message.text%></h3></li>
-        <%})%>
-    <%} else {%>
-        <p>No Posts Yet!</p>
-    <%}%>
-</ul>
+                <div class="no-post">
+                    <p>No Posts Yet!</p>
+                </div>
+        <%}%>
+    
+</div>
 
