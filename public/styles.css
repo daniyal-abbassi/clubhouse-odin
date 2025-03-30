@@ -97,15 +97,13 @@ footer {
   grid-template-columns: 1fr 1fr;
 }
 .title {
-  font-size: 1.3rem;
+  font-size: 2rem;
   text-align: center;
   width: 80%;
   border-radius: 10px;
-  border: 1px solid #ef476f;
-  padding: 10px;
   padding-top: 20px;
-  color: #F8FFE5;
-  font-weight: bold;
+  background-color: #ef476f;
+  color: #FFC43D;
 }
 .post-username,.post-date {
     width: 80%;
