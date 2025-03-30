@@ -4,7 +4,7 @@ const pool = require('../database/pool');
 const Messages = {
     getAllMessages: async()=>{
         try {
-            const results = await pool.query('SELECT * FROM messages INNER JOIN users USING(user_id)')
+            const results = await pool.query('SELECT * FROM messages INNER JOIN users USING(user_id) ORDER BY written_at DESC')
             return results.rows;
         } catch (error) {
             console.error('ERROR IN MESSAGES.getAllMessages: ',error);
