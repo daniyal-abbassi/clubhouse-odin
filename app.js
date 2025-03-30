@@ -31,7 +31,7 @@ app.set('view engine','ejs');
 app.use(session({
     store: new pgSession({
         conString: process.env.DATABASE_URL,
-        tableName: 'sessions'
+        tableName: 'session'
     }),
     secret: process.env.SECRET || 'my-cute-cat',
     resave: false,
