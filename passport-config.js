@@ -17,8 +17,10 @@ passport.use('local-signup',new LocalStrategy({
     async(req,username,password,done)=>{
         try {
             //check for existing user
+
             const existingUser = await User.findOne(username);
             if(existingUser) {
+
                 return done(null,false,{message: "username is already exists!!!"})
             }
             //hash password
@@ -45,7 +47,6 @@ passport.use('local-login',new LocalStrategy({
         try {
             //see if user logged is in users or not
             const existingUser = await User.findOne(username);
-            console.log('user successfully logged in: ',existingUser)
             //if it is not , return with error
             if(!existingUser) {
                 return done(null,false,{message: 'User not Found!!!'})

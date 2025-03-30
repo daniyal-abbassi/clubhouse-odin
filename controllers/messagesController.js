@@ -5,10 +5,7 @@ const messagesController = {
         try {
             //pass messages for showing in page
             const messages = await Messages.getAllMessages();
-            console.log('req.user in messages (not logged in): ',req.user)
-            
-            res.render('messages',{layout: './layouts/main',title: 'Messages',messages,user: req.user})
-            
+            res.render('messages',{layout: './layouts/main',title: 'Messages',messages,user: req.user})     
         } catch (error) {
             console.error('ERROR IN MESSAGES.messagesGet: ',error)
             res.status(500).send('SERVER ERROR!')

@@ -8,7 +8,7 @@ const validateUser = require('../validator');
 signupRouter.get('/',signupController.signupGet)
 signupRouter.post('/',validateUser,passport.authenticate('local-signup',{
     successRedirect: '/messages',
-    failureRedirect: '/sign-up',
+    failureRedirect: '/log-in',
     failureFlash: true
 }))
 

@@ -8,7 +8,10 @@
 body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+.error-message {
+    color: #ef476f;
+  padding: 5px;
+}
 /*header.ejs*/
 
 header {

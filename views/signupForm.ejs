@@ -3,9 +3,9 @@
         <%messages.error.forEach(message=>{%>
             <p><%=message%></p>
             <%})%>
+            <%}%>
+            <%-include('errors.ejs')%>
         </div>
-        <%}%>
-        <%-include('errors.ejs')%>
 <form action="/sign-up" method="POST" class="form">
     <label for="fullName">Full Name </label>
     <input type="text" name="fullName" id="fullName" required placeholder="Full Name" />

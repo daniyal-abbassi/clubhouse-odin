@@ -5,8 +5,8 @@ const pool = require('../database/pool');
 const User = {
     addToUsers: async(fullname,username,password) => {
         try {
-            await pool.query('INSERT INTO users(fullname,username,password) VALUES($1,$2,$3) RETURNING *', [fullname,username,password]);
-            
+            const resluts = await pool.query('INSERT INTO users(fullname,username,password) VALUES($1,$2,$3) RETURNING *', [fullname,username,password]);
+            return resluts.rows[0];
         } catch (error) {
             console.error(`ERROR IN USER.addToUsers model : ${error}`);
             throw error;

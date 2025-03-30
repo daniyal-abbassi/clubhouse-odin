@@ -4,7 +4,7 @@ const ensureLoggedIn = require('../middleware/auth');
 const User = require('../models/User');
 
 membershipRouter.get('/',ensureLoggedIn,(req,res)=>{
-    res.render('upgradeMembership',{title: 'Upgrade Membership'})
+    res.render('upgradeMembership',{title: 'Upgrade Membership',user: req.user})
 })
 
 membershipRouter.post('/',ensureLoggedIn,async(req,res)=>{
