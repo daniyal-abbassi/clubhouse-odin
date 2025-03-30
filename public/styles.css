@@ -97,17 +97,18 @@ footer {
   grid-template-columns: 1fr 1fr;
 }
 .title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-align: center;
   width: 80%;
   border-radius: 10px;
   border: 1px solid #ef476f;
   padding: 10px;
+  padding-top: 20px;
   color: #F8FFE5;
   font-weight: bold;
 }
 .post-username,.post-date {
-    width: 50%;
+    width: 80%;
     margin-bottom: 20px;
   background-color: #EF476F;
   padding: 5px 10px;
@@ -125,12 +126,11 @@ footer {
     letter-spacing: 0.153em;
     font-style: normal;
 }
-.post-text p {
-    margin-top: 20px;
-    height: 50px;
-  border: 1px solid #fff;
-  padding: 10px 20px;
+.post-text  {
+  border: 1px solid #EF476F;
   border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
 }
 /*sign-up.ejs*/
 .form {

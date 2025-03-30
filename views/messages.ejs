@@ -9,7 +9,7 @@
                 <div class="details">
                 <section class="post-username">
                     <p class="username">Posted by: </p>
-                <%if(user) {%>
+                <%if(user.membership) {%>
                     <span><%=message.username%> </span>
                 <%} else {%>
                     <p class="no-username">(log in to see username)</p>
@@ -17,7 +17,7 @@
                 </section>
                 <section class="post-date">
                     <p class="date">Date: </p>
-                <%if(user) {%>
+                <%if(user.membership) {%>
                     <% const date = new Date(message.written_at); const monthNames = [
               "January", "February", "March", "April", "May", "June", "July",
               "August", "September", "October", "November", "December" ]; const
