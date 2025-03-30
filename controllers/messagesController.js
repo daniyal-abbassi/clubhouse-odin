@@ -20,8 +20,9 @@ const messagesController = {
     addMessagePost: async(req,res)=>{
         try {
             const message = req.body.message;
+            const title = req.body.title;
             const {user_id} = req.user;
-            await Messages.createMessage(user_id,message)
+            await Messages.createMessage(user_id,message,title)
             res.redirect('/messages')
         } catch (error) {
             console.error('ERROR IN MESSAGES.addMessagePost: ',error)
