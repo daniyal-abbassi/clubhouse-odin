@@ -1,4 +1,4 @@
-#Clubhouse Messaging App - (TOP)
+# Clubhouse Messaging App - (TOP)
 
 [![Node.js](https://img.shields.io/badge/Node.js-18.x-green)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/Express-4.x-lightgrey)](https://expressjs.com/)
@@ -56,4 +56,4 @@ A secure messaging application with user authentication, built as part of The Od
 
 4. **Initialize the database**
 
-5. ** Start the aplication**
+5. **Start the aplication**
