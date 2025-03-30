@@ -38,6 +38,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 //routers here
+app.get('/',messagesRouter)
 app.use('/sign-up',signupRouter)
 app.use('/log-in',loginRouter)
 app.use('/messages',messagesRouter)
