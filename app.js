@@ -4,6 +4,7 @@ const app = express();
 const passport = require('passport');
 const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
+const pool = require('./database/pool');
 const flash = require('connect-flash');
 require('dotenv').config();
 //require routers
@@ -30,13 +31,14 @@ app.set('view engine','ejs');
 //implement session
 app.use(session({
     store: new pgSession({
-        conString: process.env.DATABASE_URL,
-        tableName: 'session'
+        pool: pool,
+        createTableIfMissing: true,
+        
     }),
     secret: process.env.SECRET || 'my-cute-cat',
     resave: false,
     saveUninitialized: false,
-    cookie: {secure: true}
+    cookie: { maxAge: 60 * 60 * 1000 }
 }))
 
 app.use(flash());
