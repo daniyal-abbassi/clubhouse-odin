@@ -11,9 +11,9 @@ const Messages = {
             throw error;
         }
     },
-    createMessage: async(user_id,text)=>{
+    createMessage: async(user_id,text,title)=>{
         try {
-            await pool.query('INSERT INTO messages(user_id,text) VALUES($1,$2)',[user_id,text]);
+            await pool.query('INSERT INTO messages(user_id,text,title) VALUES($1,$2,$3)',[user_id,text,title]);
         } catch (error) {
             console.error('ERROR IN MESSAGES.createMessage: ',error);
             throw error;
