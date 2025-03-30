@@ -3,7 +3,7 @@ const app = express();
 //require passport
 const passport = require('passport');
 const session = require('express-session');
-const pgSession = require('conncet-pg-simple')(session);
+const pgSession = require('connect-pg-simple')(session);
 const flash = require('connect-flash');
 require('dotenv').config();
 //require routers
