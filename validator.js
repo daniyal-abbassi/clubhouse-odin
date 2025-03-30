@@ -3,7 +3,8 @@ const {body,validationResult} = require('express-validator');
 //define rules
 const validateUser = [
     body('fullName').trim()
-        .isAlpha().withMessage('Fullname must only contain letters!!!')
+        .matches(/^[a-zA-Z\s]+$/,'i').withMessage('Fullname must only contain letters and spaces!!!')
+        .trim()
         .isLength({min:3,max:40}).withMessage('Fullname must be between 3 and 40 characters!!!'),
     body('username').trim()
         .isLength({min:3,max:20}).withMessage('Username must be between 3 and 20 characters!!!'),
