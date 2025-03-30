@@ -2,10 +2,14 @@ const express = require('express');
 const app = express();
 //require passport
 const passport = require('passport');
-const session = require('express-session')
+const session = require('express-session');
+const flash = require('connect-flash');
 require('dotenv').config();
 //require routers
 const signupRouter=require('./routes/signupRouter');
+const loginRouter = require('./routes/loginRouter');
+const messagesRouter = require('./routes/messagesRouter');
+const membershipRouter = require('./routes/membershipRouter');
 
 require('./passport-config');
 app.use(express.urlencoded({extended: true}));
@@ -29,16 +33,24 @@ app.use(session({
     saveUninitialized: false
 }))
 
+app.use(flash());
 //initialize authentication before routes
 app.use(passport.initialize());
 app.use(passport.session());
-
 //routers here
+app.get('/',messagesRouter)
 app.use('/sign-up',signupRouter)
-
-
-
-
+app.use('/log-in',loginRouter)
+app.use('/messages',messagesRouter)
+app.use('/membership',membershipRouter)
+app.get('/log-out',(req,res)=>{
+    req.logout(err=>{
+        if(err) {
+            return next(err)
+        }
+        res.redirect('/messages')
+    })
+})
 
 
 

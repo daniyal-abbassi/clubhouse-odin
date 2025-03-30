@@ -1,0 +1,22 @@
+<h1 id="main-title">Clubhouse (TOP)</h1>
+<nav>
+    <%if(!user) {%>
+        <button><a href="/sign-up">Sign Up</a></button>
+        <button><a href="/log-in">Log in</a></button>
+    <%} else {%>
+        <%if(user.membership) {%>
+            <button><a href="/messages/new-message">New Message</a></button>
+    
+        <%} else {%>
+            
+            <button><a href="/membership">Become a member</a></button>
+        <%}%>
+        <button><a href="log-out">Log out</a></button>
+    <%}%>
+</nav>
+
+<script>
+document.getElementById('main-title').addEventListener('click',()=>{
+    window.location.href='/messages'
+})
+</script>

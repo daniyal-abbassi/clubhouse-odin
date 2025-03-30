@@ -1,15 +1,22 @@
-<%-include('errors.ejs')%>
-<form action="/sign-up" method="POST">
-    <label for="fullName">Full Name: </label>
+<% if (messages.error && messages.error.length>0) {%>
+    <div class="error-message">
+        <%messages.error.forEach(message=>{%>
+            <p><%=message%></p>
+            <%})%>
+            <%}%>
+            <%-include('errors.ejs')%>
+        </div>
+<form action="/sign-up" method="POST" class="form">
+    <label for="fullName">Full Name </label>
     <input type="text" name="fullName" id="fullName" required placeholder="Full Name" />
 
-    <label for="username">Username: </label>
+    <label for="username">Username </label>
     <input type="text" name="username" id="username" required placeholder="username" />
 
-    <label for="password">Password: </label>
+    <label for="password">Password </label>
     <input type="password" name="password" id="password" required placeholder="password" />
 
-    <label for="confirmPassword">Confirm Password: </label>
+    <label for="confirmPassword">Confirm Password </label>
     <input type="password" name="confirmPassword" id="confirmPassword" required placeholder="confirmPassword" />
 
     <input type="submit" value="Sign Up">

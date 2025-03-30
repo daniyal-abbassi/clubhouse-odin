@@ -1,0 +1,50 @@
+
+<div class="posts-container">
+    <%if(messages&&messages.length>0) {%>
+        <% messages.forEach(message=>{%>
+            <div class="post">
+                <div class="grid">
+
+                
+                <div class="details">
+                <section class="post-username">
+                    <p class="username">Posted by: </p>
+                <%if(user) {%>
+                    <span><%=message.username%> </span>
+                <%} else {%>
+                    <p class="no-username">(log in to see username)</p>
+                    <%}%>
+                </section>
+                <section class="post-date">
+                    <p class="date">Date: </p>
+                <%if(user) {%>
+                    <% const date = new Date(message.written_at); const monthNames = [
+              "January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December" ]; const
+              month = monthNames[date.getMonth()]; const day = date.getDate();
+              const hours = String(date.getHours()).padStart(2,'0'); const minutes = String(date.getMinutes()).padStart(2,'0');const formattedDate = `${month}
+              ${day}, ${hours}:${minutes}` %> 
+                    <small><%=formattedDate%> </small>
+                <%} else {%>
+                    <p class="no-date">(log in to see date)</p>
+                    <%}%>
+                    </section>
+                </div>
+                <div class="title">
+                    <%=message.title%>
+                </div>
+            </div>
+
+                <section class="post-text">
+                    <p><%=message.text%></p>
+                </section>
+            </div>
+            <%})%>
+            <%} else {%>
+                <div class="no-post">
+                    <p>No Posts Yet!</p>
+                </div>
+        <%}%>
+    
+</div>
+

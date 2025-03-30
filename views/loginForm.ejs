@@ -1,0 +1,19 @@
+<% if (messages.error && messages.error.length>0) {%>
+    <div class="error-message">
+        <%messages.error.forEach(message=>{%>
+            <p><%=message%></p>
+            <%})%>
+    </div>
+    <%}%>
+
+<form action="/log-in" method="POST" class="form">
+    <label for="username">Username: </label>
+    <input type="text" name="username" id="username" required placeholder="username" />
+
+
+    <label for="password">Password: </label>
+    <input type="password" name="password" id="password" required placeholder="password" />
+
+
+    <input type="submit" value="Log in" />
+</form>

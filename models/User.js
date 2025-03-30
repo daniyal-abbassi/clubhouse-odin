@@ -5,8 +5,8 @@ const pool = require('../database/pool');
 const User = {
     addToUsers: async(fullname,username,password) => {
         try {
-            await pool.query('INSERT INTO users(fullname,username,password) VALUES($1,$2,$3) RETURNING *', [fullname,username,password]);
-            
+            const resluts = await pool.query('INSERT INTO users(fullname,username,password) VALUES($1,$2,$3) RETURNING *', [fullname,username,password]);
+            return resluts.rows[0];
         } catch (error) {
             console.error(`ERROR IN USER.addToUsers model : ${error}`);
             throw error;
@@ -35,10 +35,18 @@ const User = {
     //find a user by id
     findById: async(user_id)=>{
         try {
-            const result = await pool.query('SELECT * FROM users WHERE user_id=$1 RETURNING *',[user_id]);
+            const result = await pool.query('SELECT * FROM users WHERE user_id=$1',[user_id]);
             return result.rows[0]
         } catch (error) {
             console.error(`ERROR IN USER.findById model: ${error}`);
+            throw error;
+        }
+    },
+    upgradeUser: async(user_id)=>{
+        try {
+            await pool.query('UPDATE users SET membership=true WHERE user_id=$1',[user_id]);
+        } catch (error) {
+            console.error(`ERROR IN USER.upgradeUser model: ${error}`);
             throw error;
         }
     }
