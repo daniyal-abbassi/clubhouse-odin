@@ -89,8 +89,22 @@ footer {
   padding: 15px 10px;
   border-radius: 10px;
  width: 50%;
-  display: flex;
-  flex-direction: column;
+ display: grid;
+ grid-template-rows: 1fr 1fr;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.title {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 80%;
+  border-radius: 10px;
+  border: 1px solid #ef476f;
+  padding: 10px;
+  color: #F8FFE5;
+  font-weight: bold;
 }
 .post-username,.post-date {
     width: 50%;

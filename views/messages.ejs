@@ -3,6 +3,10 @@
     <%if(messages&&messages.length>0) {%>
         <% messages.forEach(message=>{%>
             <div class="post">
+                <div class="grid">
+
+                
+                <div class="details">
                 <section class="post-username">
                     <p class="username">Posted by: </p>
                 <%if(user) {%>
@@ -25,6 +29,12 @@
                     <p class="no-date">(log in to see date)</p>
                     <%}%>
                     </section>
+                </div>
+                <div class="title">
+                    <%=message.title%>
+                </div>
+            </div>
+
                 <section class="post-text">
                     <p><%=message.text%></p>
                 </section>
